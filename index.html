@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css">
+    <script src="static/app.js"></script>
+    <title>INVEXCORE</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">INVEXCORE</div>
+        <ul class="nav-list">
+            <li><a href="#inicio">INICIO</a></li>
+            <li><a href="#acerca">ACERCA DE NOSOTROS</a></li>
+            <li><a href="#servicios">SERVICIOS</a></li>
+            <li><a href="#contacto">CONTACTO</a></li>
+            <li><a href="planes.html" id="inicia">PLANES</a></li>
+        </ul>
+        <button class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <header id="inicio" class="hero-section">
+        <h1>¡Bienvenido a INVEXCORE!</h1>
+        <p>Optimiza tu inventario, maximiza tu éxito.</p>
+        <a href="#" id="descubrir-btn">Descubrir más</a>
+
+    </header>
+
+   <section class="about-section" id="acerca">
+    <h2 class="about-title">Acerca de nosotros</h2>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">
+        INVEXCORE es una plataforma innovadora dedicada a transformar la gestión de inventarios en empresas medianas. Nuestro propósito es ofrecer soluciones tecnológicas avanzadas para facilitar procesos, mejorar decisiones estratégicas y maximizar la eficiencia operativa.
+    </p>
+    <div class="mvv-container">
+        <div class="mision" style="background-color: #fff; border-radius: 12px; padding: 20px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+            <h3>Misión</h3>
+            <img src="mision.jpg" alt="Imagen de Misión" style="width: 100%; max-height: 160px; object-fit: cover; border-radius: 12px; margin-bottom: 10px;">
+            <p>Proporcionar soluciones tecnológicas avanzadas para la gestión eficiente de inventarios, ayudando a la empresa Helados Jivu a optimizar sus recursos y maximizar su rentabilidad.</p>
+        </div>
+        <div class="vision" style="background-color: #fff; border-radius: 12px; padding: 20px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+            <h3>Visión</h3>
+            <img src="vision.png" alt="Imagen de Visión" style="width: 100%; max-height: 160px; object-fit: cover; border-radius: 12px; margin-bottom: 10px;">
+            <p>Ser el software líder en gestión de inventarios para negocios medianos, reconocido por su innovación, eficiencia y capacidad de adaptación a las necesidades del mercado.</p>
+        </div>
+        <div class="valores" style="background-color: #fff; border-radius: 12px; padding: 20px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+            <h3>Valores</h3>
+            <img src="valores.jpg" alt="Imagen de Valores" style="width: 100%; max-height: 160px; object-fit: cover; border-radius: 12px; margin-bottom: 10px;">
+            <ul>
+                <li>Innovación</li>
+                <li>Eficiencia</li>
+                <li>Compromiso</li>
+                <li>Transparencia</li>
+                <li>Orientación al cliente</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+    <main>
+        <section id="servicios" class="cards-container">
+            <h2>Nuestros servicios</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">
+                Nuestros servicios están diseñados para ofrecerte control total sobre tu inventario, mejorar la eficiencia operativa y ayudarte a tomar decisiones estratégicas. Desde el análisis de ventas hasta la generación automática de informes, INVEXCORE transforma tus datos en acciones concretas para el éxito de tu negocio.
+            </p>
+            <div class="cards">
+                <div class="card">
+                    <img src="servicio 1.jpg" alt="Servicio 1">
+                    <h3>"Control de Ventas y Stock Crítico"</h3>
+                    <p>Identifica los productos más vendidos y predice cuándo será necesario reabastecer, optimizando la gestión de compras y reduciendo pérdidas por sobrestock o desabasto.</p>
+                </div>
+                <div class="card">
+                    <img src="servicio 2.jpg" alt="Servicio 2">
+                    <h3>"Control Total de Productos Clave"</h3>
+                    <p>Permite registrar, actualizar y monitorear el stock de productos, asegurando que la empresa siempre tenga disponibles los artículos necesarios.</p>
+                </div>
+                <div class="card">
+                    <img src="Servicio 3.jpg" alt="Servicio 3">
+                    <h3>"Informes Inteligentes para Decisiones Rentables"</h3>
+                    <p>Proporciona informes detallados sobre ventas, stock y proveedores, facilitando la toma de decisiones estratégicas para mejorar la rentabilidad del negocio.</p>
+                </div>
+            </div>
+        </section>
+
+       <section id="contacto" class="contact-section">
+    <h2>Contacto</h2>
+    <p>¡Si te interesa conocer más información sobre INVEXCORE, contáctanos!</p>
+    <form id="contact-form" action="/api/contacto" method="POST">
+      <input type="text" name="nombre" placeholder="Nombre" required>
+      <input type="email" name="correo" placeholder="Correo Electrónico" required>
+      <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+<script>
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault(); // Evitar recarga de página
+
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+            const response = await fetch('http://localhost:3000/api/contacto', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+
+            const text = await response.text();
+            alert(text);
+            form.reset();
+        } catch (error) {
+            alert('Error al enviar datos');
+            console.error(error);
+        }
+    });
+</script>
+
+        <div id="flash-messages" class="flash-messages"></div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://www.instagram.com/invexcore_?igsh=MWNnN216dWhieGprdg==" target="_blank">Instagram</a> |
+            <a href="https://www.facebook.com/share/1VeZ6JV585/?mibextid=wwXIfr" target="_blank">Facebook</a> |
+            <a href="https://x.com/invexcore?s=11" target="_blank">X</a>
+        </div>
+        <p>&copy; 2025 INVEXCORE. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
