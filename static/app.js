@@ -1,8 +1,8 @@
-document.addEventListener('DOMContentLoaded', ()=>{
-    const burger = document.querySelector('.burger');
-    const navLinks = document.querySelector('.nav-links');
-    burger.addEventListener('click', ()=>{
-        navLinks.classList.toggle('active');
+document.addEventListener('DOMContentLoaded', () => {
+  const burger   = document.querySelector('.burger');
+  const navLinks = document.querySelector('.nav-list'); // ← aquí
+  burger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
 
     });
 })
@@ -46,4 +46,5 @@ function showFlashMessage(message, category){
     }, 5000);
 
 }
+
 
