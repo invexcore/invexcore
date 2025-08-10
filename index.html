@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/styles.css">
-    <script src="static/app.js"></script>
+    <script src="static/app.js" defer></script>
     <title>INVEXCORE</title>
 </head>
 <body>
-   <nav class="navbar">
-        <div class="logo">INVEXCORE</div>
+    <nav class="navbar">
+        <div class="logo">
+    <img src="logo invecore.png" alt="Logo INVEXCORE">
+    <span>INVEXCORE</span>
+</div>
         <ul class="nav-list">
             <li><a href="#inicio">INICIO</a></li>
             <li><a href="#acerca">ACERCA DE NOSOTROS</a></li>
@@ -27,40 +30,37 @@
     <header id="inicio" class="hero-section">
         <h1>¡Bienvenido a INVEXCORE!</h1>
         <p>Optimiza tu inventario, maximiza tu éxito.</p>
-        <a href="#" id="descubrir-btn">Descubrir más</a>
-
     </header>
 
-   <section class="about-section" id="acerca">
-    <h2 class="about-title">Acerca de nosotros</h2>
-    <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">
-        INVEXCORE es una plataforma innovadora dedicada a transformar la gestión de inventarios en empresas medianas. Nuestro propósito es ofrecer soluciones tecnológicas avanzadas para facilitar procesos, mejorar decisiones estratégicas y maximizar la eficiencia operativa.
-    </p>
-    <div class="mvv-container">
-        <div class="mision" style="background-color: #fff; border-radius: 12px; padding: 20px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-            <h3>Misión</h3>
-            <img src="mision.jpg" alt="Imagen de Misión" style="width: 100%; max-height: 160px; object-fit: cover; border-radius: 12px; margin-bottom: 10px;">
-            <p>Proporcionar soluciones tecnológicas avanzadas para la gestión eficiente de inventarios, ayudando a la empresa Helados Jivu a optimizar sus recursos y maximizar su rentabilidad.</p>
+    <section class="about-section" id="acerca">
+        <h2 class="about-title">Acerca de nosotros</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">
+            INVEXCORE es una plataforma innovadora dedicada a transformar la gestión de inventarios en empresas medianas. Nuestro propósito es ofrecer soluciones tecnológicas avanzadas para facilitar procesos, mejorar decisiones estratégicas y maximizar la eficiencia operativa.
+        </p>
+        <div class="mvv-container">
+            <div class="mision">
+                <h3>Misión</h3>
+                <img src="mision.jpg" alt="Imagen de Misión">
+                <p>Proporcionar soluciones tecnológicas avanzadas para la gestión eficiente de inventarios, ayudando a la empresa Helados Jivu a optimizar sus recursos y maximizar su rentabilidad.</p>
+            </div>
+            <div class="vision">
+                <h3>Visión</h3>
+                <img src="vision.png" alt="Imagen de Visión">
+                <p>Ser el software líder en gestión de inventarios para negocios medianos, reconocido por su innovación, eficiencia y capacidad de adaptación a las necesidades del mercado.</p>
+            </div>
+            <div class="valores">
+                <h3>Valores</h3>
+                <img src="valores.jpg" alt="Imagen de Valores">
+                <ul>
+                    <li>Innovación</li>
+                    <li>Eficiencia</li>
+                    <li>Compromiso</li>
+                    <li>Transparencia</li>
+                    <li>Orientación al cliente</li>
+                </ul>
+            </div>
         </div>
-        <div class="vision" style="background-color: #fff; border-radius: 12px; padding: 20px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-            <h3>Visión</h3>
-            <img src="vision.png" alt="Imagen de Visión" style="width: 100%; max-height: 160px; object-fit: cover; border-radius: 12px; margin-bottom: 10px;">
-            <p>Ser el software líder en gestión de inventarios para negocios medianos, reconocido por su innovación, eficiencia y capacidad de adaptación a las necesidades del mercado.</p>
-        </div>
-        <div class="valores" style="background-color: #fff; border-radius: 12px; padding: 20px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-            <h3>Valores</h3>
-            <img src="valores.jpg" alt="Imagen de Valores" style="width: 100%; max-height: 160px; object-fit: cover; border-radius: 12px; margin-bottom: 10px;">
-            <ul>
-                <li>Innovación</li>
-                <li>Eficiencia</li>
-                <li>Compromiso</li>
-                <li>Transparencia</li>
-                <li>Orientación al cliente</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
+    </section>
 
     <main>
         <section id="servicios" class="cards-container">
@@ -87,18 +87,18 @@
             </div>
         </section>
 
-       <section id="contacto" class="contact-section">
-    <h2>Contacto</h2>
-    <p>¡Si te interesa conocer más información sobre INVEXCORE, contáctanos!</p>
-    <form id="contact-form" action="/api/contacto" method="POST">
-      <input type="text" name="nombre" placeholder="Nombre" required>
-      <input type="email" name="correo" placeholder="Correo Electrónico" required>
-      <textarea name="mensaje" placeholder="Mensaje" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+        <section id="contacto" class="contact-section">
+            <h2>Contacto</h2>
+            <p>¡Si te interesa conocer más información sobre INVEXCORE, contáctanos!</p>
+            <form id="contact-form" action="/api/contacto" method="POST">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="email" name="correo" placeholder="Correo Electrónico" required>
+                <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
 
-<script>
+        <script>
     const form = document.getElementById('contact-form');
     form.addEventListener('submit', async (e) => {
         e.preventDefault(); // Evitar recarga de página
@@ -123,8 +123,16 @@
     });
 </script>
 
-        <div id="flash-messages" class="flash-messages"></div>
+        <!-- CTA para registrar empresa (ahora debajo del formulario) -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>¿Listo para optimizar tu inventario?</h2>
+                <p>Registra tu empresa y comienza a gestionar tu inventario de forma inteligente con INVEXCORE.</p>
+                <a href="registro_empresa.html" class="cta-button">Registrar Empresa</a>
+            </div>
+        </section>
 
+        <div id="flash-messages" class="flash-messages"></div>
     </main>
 
     <footer class="footer">
@@ -135,6 +143,10 @@
         </div>
         <p>&copy; 2025 INVEXCORE. Todos los derechos reservados.</p>
     </footer>
+    <script src="static/app.js" defer></script>
+
 </body>
 </html>
+
+
 
