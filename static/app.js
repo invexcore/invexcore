@@ -1,10 +1,17 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const burger   = document.querySelector('.burger');
-  const navLinks = document.querySelector('.nav-list'); // ← aquí
-  burger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+// static/app.js
+const navbar = document.querySelector('.navbar');
+const burger = document.querySelector('.burger');
 
-    });
+if (burger && navbar) {
+  burger.addEventListener('click', () => navbar.classList.toggle('open'));
+  document.querySelectorAll('.nav-list a').forEach(a =>
+    a.addEventListener('click', () => navbar.classList.remove('open'))
+  );
+}
+
+// Sombra de navbar al hacer scroll
+const onScroll = () => navbar?.classList.toggle('is-scrolled', (window.scrollY||0) > 6);
+window.addEventListener('scroll', onScroll); onScroll();
 })
 
 document.getElementById('contact-form').addEventListener('submit', function(event) {
@@ -46,5 +53,6 @@ function showFlashMessage(message, category){
     }, 5000);
 
 }
+
 
 
