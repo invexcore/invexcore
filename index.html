@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shorcut icon" href="logo invecore.png" type="image/x-icon">
     <link rel="stylesheet" href="static/styles.css">
     <script src="static/app.js" defer></script>
     <title>INVEXCORE</title>
@@ -29,9 +28,17 @@
     </nav>
 
     <header id="inicio" class="hero-section">
-        <h1>¡Bienvenido a INVEXCORE!</h1>
-        <p>Optimiza tu inventario, maximiza tu éxito.</p>
-    </header>
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>¡Bienvenido a INVEXCORE!</h1>
+      <p>Optimiza tu inventario, maximiza tu éxito.</p>
+    </div>
+    <div class="hero-image">
+      <img src="NO SEEEE, EN QUE MOMENTO TE ADUEÑASTE DE MI PIEEEEL.png" alt="Imagen de INVEXCORE">
+    </div>
+  </div>
+</header>
+
 
     <section class="about-section" id="acerca">
         <h2 class="about-title">Acerca de nosotros</h2>
@@ -99,31 +106,6 @@
             </form>
         </section>
 
-        <script>
-    const form = document.getElementById('contact-form');
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault(); // Evitar recarga de página
-
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
-
-        try {
-            const response = await fetch('http://localhost:3000/api/contacto', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data),
-            });
-
-            const text = await response.text();
-            alert(text);
-            form.reset();
-        } catch (error) {
-            alert('Error al enviar datos');
-            console.error(error);
-        }
-    });
-</script>
-
         <!-- CTA para registrar empresa (ahora debajo del formulario) -->
         <section class="cta-section">
             <div class="cta-content">
@@ -144,11 +126,7 @@
         </div>
         <p>&copy; 2025 INVEXCORE. Todos los derechos reservados.</p>
     </footer>
-    <script src="static/app.js" defer></script>
+    <script src="app.js" defer></script>
 
 </body>
 </html>
-
-
-
-
