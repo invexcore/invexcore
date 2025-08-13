@@ -105,6 +105,30 @@
                 <button type="submit">Enviar</button>
             </form>
         </section>
+        <script>
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault(); // Evitar recarga de página
+
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+            const response = await fetch('http://localhost:3000/api/contacto', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+
+            const text = await response.text();
+            alert(text);
+            form.reset();
+        } catch (error) {
+            alert('Error al enviar datos');
+            console.error(error);
+        }
+    });
+</script>
 
         <!-- CTA para registrar empresa (ahora debajo del formulario) -->
         <section class="cta-section">
@@ -130,3 +154,4 @@
 
 </body>
 </html>
+
